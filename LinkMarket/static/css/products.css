@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.add-btn {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.button {
+  position: relative;
+  width: 170px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #0000ff;
+  background-color: #0000ff;
+  float: right;
+}
+
+.button,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(123px);
+  height: 100%;
+  width: 39px;
+  border-radius: 10px;
+  background-color: #0000ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.button:hover {
+  background: #0000ff;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 158px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: #2e8644;
+}
+
+.button:active {
+  border: 1px solid #2e8644;
+}
+
+/* table */
+h2 {
+    text-align: center;
+    margin: 20px ;
+    color: #333;
+}
+.container {
+    width: 90%;
+    margin: 10px auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #007bff;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #ddd;
+}
+td:last-child {
+    text-align: center;
+}
+.actions {
+    cursor: pointer;
+    color: #007bff;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.tablerow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.link {
+ text-decoration: none;
+}
+
+.link img {
+  width: 20px;
+}
+
+.icons {
+  width: 30px;
+}
+#pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#pagination button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#pagination button:hover {
+    background-color: #0056b3;
+}
+
+#pagination button.active {
+    background-color: #0056b3;
+}
+
+.product-image {
+  width: 32px;
+}

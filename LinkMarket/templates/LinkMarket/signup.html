@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <title>Sign up | LinkMarket</title>
+</head>
+<body>
+    <div class="container">
+        <form class="form" method="POST" action=""> 
+            <span class="signup">Sign Up</span>
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <div class="errorlist nonfield-errors">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+            {% for field in form %}
+                <div class="form-group{% if field.errors %} has-error{% endif %}">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="errorlist">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button class="form--submit" type="submit">Sign up</button>
+            <p class="signup-text">Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+{% extends "LinkMarket/seller/dash2.html" %}
+{% block content %}
+<!-- LinkMarket/seller/business_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Details</title>
+    <style>
+    
+        .business-details {
+            margin-top: 50px;
+        }
+        .business-image {
+            max-width: 50%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .business-card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .business-card h1 {
+            margin-bottom: 20px;
+        }
+        .business-card p {
+            font-size: 1.2em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="business-card bg-white">
+                    <div class="biz-icon">
+                        <img src="{{ business.image.url }}" alt="{{ business.name }}" class="business-image img-fluid">
+                    </div>
+
+                    <div class="business-details mt-4">
+                        <p>Business Name:{{ business.name }}</p>
+                        <p>Description: {{ business.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

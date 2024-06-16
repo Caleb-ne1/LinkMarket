@@ -1,0 +1,32 @@
+{% extends 'LinkMarket/seller/dash2.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image" />
+        <div class="product-details">
+            <h1>{{ product.name }}</h1>
+            <p><strong>Category:</strong> {{ product.category }}</p>
+            <p><strong>Description:</strong> {{ product.description }}</p>
+            <p><strong>Stock:</strong> {{ product.stock }}</p>
+            <p><strong>Price:</strong> {{ product.price }}</p>
+            <div class="buttons">
+                <a href="{% url 'product_edit' product.id %}" class="edit-button">Edit</a>
+                <a href="{% url 'product_delete' product.id %}" class="delete-button">Delete</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends "LinkMarket/seller/dash2.html" %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Product</title>
+    <link rel="stylesheet" href="{% static 'css/product_delete.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Delete Product</h1>
+        <p>Are you sure you want to delete "{{ product.name }}"?</p>
+        <div class="buttons">
+            <form action="" method="post" action="{% url "product_delete"  product.id %}">
+                {% csrf_token %}
+                 <button type="submit" class="delete-button">Delete</button>
+            </form>
+            <a href="{% url 'product_list' %}" class="cancel-button">Cancel</a>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

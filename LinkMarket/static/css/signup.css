@@ -1,0 +1,116 @@
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.signup {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input[type="text"].is-invalid,
+input[type="email"].is-invalid,
+input[type="password"].is-invalid,
+select.is-invalid {
+  border-color: #dc3545;
+}
+
+.errorlist {
+  color: #dc3545;
+  margin-top: 5px;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 14px;
+}
+
+.errorlist li {
+  margin-bottom: 5px;
+}
+
+.nonfield-errors {
+  color: #dc3545;
+  margin-bottom: 15px;
+}
+
+.form--submit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.form--submit:hover {
+  background-color: #0056b3;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+

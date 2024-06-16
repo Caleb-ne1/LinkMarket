@@ -1,0 +1,146 @@
+{% extends 'LinkMarket/seller/dash2.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Product</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container-form {
+            display: flex;
+            justify-content: center;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form p {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="file"]
+       {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container-form">
+    <div class="form-container">
+        <h1>Edit Product</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">{% if form.instance.pk %}Save{% else %}Create{% endif %}</button>
+        </form>
+    </div>
+</div>
+
+    <script> 
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select the parent element
+            const container = document.getElementById('main-content');
+        
+            // Attach the event listener to the parent element
+            container.addEventListener('submit', function(event) {
+                // Check if the event target matches the dynamically loaded form
+                if (event.target.matches('form.dynamically-loaded-form')) {
+                    event.preventDefault();  // Prevent the default form submission
+                    // Handle the form submission
+                    handleFormSubmission(event.target);
+                }
+            });
+        });
+        
+        // Function to handle the form submission
+        function handleFormSubmission(form) {
+            const formData = new FormData(form);
+            const csrftoken = getCookie('csrftoken');  // Function to get CSRF token
+        
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': csrftoken  // Include the CSRF token
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response data
+                console.log('Success:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        
+        // Function to get the CSRF token from the cookies
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+</body>
+</html>
+
+{% endblock %}

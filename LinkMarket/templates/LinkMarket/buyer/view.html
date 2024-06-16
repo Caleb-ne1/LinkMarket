@@ -1,0 +1,59 @@
+{% extends "LinkMarket/buyer/ecom.html" %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/view.css" %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>LinkMarket - Product Details</title>
+</head>
+<body>
+    <main>
+        <div class="container product-view">
+            <div class="product-details">
+                <div class="product-image">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                </div>
+                <div class="product-info">
+                    <input type="hidden" class="product-id" value="{{ product.id }} id="product-id">
+                    <input type="hidden" class="product-name" value="{{ product.name }}" id="product-name">
+                    <input type="hidden" class="product-name" value="{{ product.price }}" id="product-price">
+                    <h1>{{ product.name }}</h1>
+                    <p class="price">Ksh.{{ product.price }}</p>
+                    <p class="description">
+                        {{ product.description }}
+                    </p>
+                    <form action="{% url "add_to_cart" product.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="cta" id="add-to-cart-btn">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="product-reviews">
+                <h2>Reviews</h2>
+                <div class="review">
+                    <p class="reviewer">Caleb Kibet</p>
+                    <p class="review-text">Excellent product! Highly recommend.</p>
+                    <p class="review-rating">Rating: ★★★★★</p>
+                </div>
+                <div class="review">
+                    <p class="reviewer">Caleb Kibet</p>
+                    <p class="review-text">Good value for the price. Will buy again.</p>
+                    <p class="review-rating">Rating: ★★★★☆</p>
+                </div>
+                <div class="review">
+                    <p class="reviewer">Caleb Kibet</p>
+                    <p class="review-text">Decent product, but delivery was slow.</p>
+                    <p class="review-rating">Rating: ★★★☆☆</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+{% endblock %}

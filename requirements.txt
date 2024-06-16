@@ -1,0 +1,13 @@
+asgiref==3.8.1
+certifi==2024.2.2
+chardet==4.0.0
+Django==5.0.4
+environ==1.0
+idna==2.10
+mysqlclient==2.2.4
+pillow==10.3.0
+requests==2.25.1
+requests-futures==1.0.1
+sqlparse==0.5.0
+typing_extensions==4.11.0
+urllib3==1.26.18

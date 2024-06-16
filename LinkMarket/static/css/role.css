@@ -1,0 +1,39 @@
+body {
+    background-color: #F2EEE0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main_container {
+  padding: 20px;
+  border-radius: 0.5rem;
+  max-width: 500px;
+  height: 500px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+}
+.buyer,
+.seller {
+  max-width: 150px;
+  padding: 1rem;
+  background-color: #ffcaa6;
+  border-radius: 10px;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
+}
+
+.role-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    gap: 6rem;
+}
+
+.buyer a,
+.seller a {
+  text-decoration: none;
+  color: black;
+}

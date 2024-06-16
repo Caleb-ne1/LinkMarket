@@ -1,0 +1,55 @@
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; 
+}
+
+.category-image {
+    width: 500px;
+}
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #d32f2f;
+}
+
+.btn-cancel {
+    background-color: #607d8b;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.btn-cancel:hover {
+    background-color: #455a64;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}

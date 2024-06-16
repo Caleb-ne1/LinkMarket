@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer-Seller Platform</title>
+    <link rel="stylesheet" href="{% static "css/About.css" %}">
+</head>
+<body>
+    <header>
+        <div class="container_nav">
+            <div class="logo">LinkMarket</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="{% url "register" %}" class="cta">Sign Up</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container_hero">
+            <h1>Connecting Buyers and Sellers Seamlessly</h1>
+            <p>Discover, Connect, and Trade with Ease</p>
+            <a href="{% url "login" %}" class="cta">Get Started</a>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="{% static "images/signup.jpg" %}" alt="Sign Up">
+                    <h3>Sign Up</h3>
+                    <p>Create an account to get started.</p>
+                </div>
+                <div class="step">
+                    <img src="{% static "images/create.jpg" %}" alt="Create Profile">
+                    <h3>Create Profile</h3>
+                    <p>Set up your profile to attract buyers or sellers.</p>
+                </div>
+                <div class="step">
+                    <img src="{% static "images/trading.jpg" %}" alt="Start Trading">
+                    <h3>Start Trading</h3>
+                    <p>Begin buying or selling items.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="feature-list">
+                <div class="feature">
+                    <img src="{% static "images/secure.jpg" %}" alt="Secure Transactions">
+                    <h3>Secure Transactions</h3>
+                    <p>Ensure your trades are safe and secure.</p>
+                </div>
+                <div class="feature">
+                    <img src="{% static "images/userReview.jpg" %}" alt="User Reviews">
+                    <h3>User Reviews</h3>
+                    <p>Read and leave reviews for users.</p>
+                </div>
+                <div class="feature">
+                    <img src="{% static "images/support.jpg" %}" alt="24/7 Support">
+                    <h3>24/7 Support</h3>
+                    <p>Get help whenever you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="pricing">
+        <div class="container">
+            <h2>Pricing</h2>
+            <div class="pricing-table">
+                <div class="plan">
+                    <div class="circle free">
+                        <h1>Free</h1>
+                    </div>
+                    <p>Ksh 0/month</p>
+                    <p>Basic features</p>
+                    <a href="#" class="cta">Sign Up</a>
+                </div>
+                <div class="plan">
+                    <div class="circle Premium">
+                        <h1>Premium</h1>
+                    </div>
+                    <p>Ksh 0/month</p>
+                    <p>Advanced features</p>
+                    <a href="#" class="cta">Sign Up</a>
+                </div>
+                <div class="plan">
+                    <div class="circle Enterprise">
+                        <h1>Enterprise</h1>
+                    </div>
+                    <p>Contact us</p>
+                    <p>Custom solutions</p>
+                    <a href="#" class="cta">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LinkMarket. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

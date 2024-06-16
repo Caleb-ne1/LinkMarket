@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <title>LinkMarket</title>
+</head>
+<body>
+    <div class="main-image-container">
+        <img src="{% static "images/35839.jpg" %}" alt="#">
+    </div>
+    <div class="content-container">
+        <h1>Welcome to LinkMarket <span>Your Ultimate Marketplace Companion</span></h1>
+        <p>
+            Embark on a new era of convenience with LinkMarket. Whether you're a buyer or a seller eager to connect with customers, we've crafted the perfect platform for you. <a href="{% url "about" %}" class="learnmore">Learn more</a>
+        </p>
+
+        <a href="{% url "login" %}">
+            <button>
+                Get Started
+            </button>
+        </a>
+    </div>
+</body>
+</html>

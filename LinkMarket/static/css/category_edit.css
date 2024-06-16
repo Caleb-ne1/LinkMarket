@@ -1,0 +1,32 @@
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; 
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-save {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-save:hover {
+    background-color: #0056b3;
+}

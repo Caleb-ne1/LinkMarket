@@ -1,0 +1,22 @@
+{% extends "LinkMarket/seller/category_detail.html" %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Detail</title>
+    <link rel="stylesheet" href="{% static 'css/category_detail.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ category.name }}</h1>
+        <div class="category-image-container">
+            <img src="{{ category.image.url }}" alt="{{ category.name }}" class="category-image">
+        </div>
+        <a href="{% url 'category_list' %}" class="btn btn-back">Back to Category List</a>
+    </div>
+</body>
+</html>
+{% endblock %}

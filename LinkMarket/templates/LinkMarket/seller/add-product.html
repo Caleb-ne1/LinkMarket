@@ -1,0 +1,36 @@
+{% extends "LinkMarket/seller/dash2.html" %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/add-product.css' %}">
+    <title>Add Product</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Add a New Product</h1>
+    <form method="post" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {% for field in form %}
+            <div class="form-group{% if field.errors %} has-error{% endif %}">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                    <small class="form-text">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit">Add</button>
+    </form>
+  </div>
+</body>
+</html>
+{% endblock %}
